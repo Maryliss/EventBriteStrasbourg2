@@ -30,3 +30,5 @@ vérifier sur http://www.yopmail.com/
 #Consignes
 
 Lundi : avant de faire les champions des views, tu vas créer la base de données. Ensuite tu vas brancher un mailer pour avoir un système d'emails fonctionnel en production
+
+https://event-brite-strasbourg.herokuapp.com/
