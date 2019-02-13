@@ -1,0 +1,17 @@
+ <p>Editer mon profil? </p>
+  <%= form_for @user do |u| %>
+    <div>
+      <p>Prénom:</p>
+      <%= u.text_field :first_name %>
+      <p>Nom:</p>
+      <%= u.text_field :last_name %>
+      <p>Description:</p>
+      <%= u.text_area :description %>
+      <p>Email:</p>
+      <%= u.text_field :email %>
+      <div class= button>
+      <%= link_to "Modifier mon profil", @user, method: :update,  data: {confirm: "Sûr de vouloir modifier ton profil?"} %>
+      </div>
+
+    </div>
+  <% end %>

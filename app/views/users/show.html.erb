@@ -1,0 +1,46 @@
+
+  <!--Mon profil de user-->
+  <div class="list-group">
+  <a href="<%=user_path(@user.id)%>" class="list-group-item list-group-item-action active">
+  <div class="d-flex w-100 justify-content-between">
+  <h5 class="mb-1"><%= @user.first_name %> <%= @user.last_name %></h5>
+  </div>
+  <small>Description : <%= @user.description%></small>
+   <br>
+  <small>Email : <%= @user.email%></small>  
+  <br>
+  </a>
+  </div>
+  <br>
+
+
+  <!--Bouton modifier mon profil-->
+  <a class="btn btn-primary" href="<%=edit_user_path(@user.id)%>" role="button">Modifier mon profil</a>
+  <br>
+
+
+  <!--Les événements créés par le user-->
+  <br>
+  <h3>Voilà les événements créés par cette personne :</h5>
+  <br>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nom de l'event</th>
+      <th scope="col">Date de l'event</th>
+      <th scope="col">Lien de l'event</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <%@user.events.each do |event|%>
+    <tr>
+      <th scope="row"><%= event.title%></th>
+      <td><%= event.start_date%></td>
+      <td><a href="<%=event_path(event.id)%>">Lien</td>
+    </tr>
+  <%end%> 
+
+  </tbody>
+</table>
+

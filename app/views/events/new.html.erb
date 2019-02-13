@@ -1,0 +1,49 @@
+<html>
+  <body>  
+
+      <!-- ... -->
+
+        <p>C'est quoi ton événement? </p>
+        <%= form_tag url_for(action: 'create'), method: "post" do %>
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+          <%= label_tag 'Titre de l\'événement' %>
+          <%= text_field_tag 'title', @event.title %>
+          <br /> <br />
+
+          <%= label_tag 'Date de l\'événement' %>
+          <%= datetime_field_tag 'start_date', @event.start_date %>
+          <br /> <br />
+
+          <%= label_tag 'Durée de l\'événement' %>
+          <%= number_field_tag 'duration', @event.duration %>
+          <br /> <br />
+
+          <%= label_tag 'Descritpion de l\'événement' %>
+          <%= text_area_tag 'description', @event.description %>
+          <br /> <br />
+
+          <%= label_tag 'Prix de l\'événement' %>
+          <%= number_field_tag 'price', @event.price %>
+          <br /> <br />
+
+          <%= label_tag 'Lieu de l\'événement' %>
+          <%= text_field_tag 'location', @event.location %>
+          <br /> <br />
+
+            <%= submit_tag "Valider mon event" %>
+
+        <% end %>
+
+    <% if @event.errors.any? %>
+          <p>Nous n'avons pas réussi à créer l'événement pour la (ou les) raison(s) suivante(s) :</p>
+          <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+          </ul>
+     <% end %>
+      <!-- ... -->
+
+  </body>
+</html>

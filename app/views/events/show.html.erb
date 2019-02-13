@@ -1,0 +1,24 @@
+
+  <!---- ici mon événement----->
+  <div class="list-group">
+  <a href="<%=events_path(@event.admin.id)%>" 
+  class="list-group-item list-group-item-action active">
+  <div class="d-flex w-100 justify-content-between">
+  <h2 class="mb-1"><%= @event.title %></h3>
+  <br>
+  <br>
+  </div>
+  <h5 class="mb-1">Description: <%= @event.description %></p></h4>
+    <h5 class="mb-1">Date: <%= @event.start_date %></p></h5>
+    <h5 class="mb-1">Durée: <%= @event.duration%> minutes</p></h5>
+    <h5 class="mb-1">Prix: <%= @event.price %>€</p></h5>
+    <h5 class="mb-1">Lieu: <%= @event.location %></p></h5>
+    <h5 class="mb-1">Nombre d'inscrits à l'événement: </p></h5>
+  <br>
+  <h5>Créateur : <%= @event.admin.first_name %></h5>
+  <h5>Email : <%= @event.admin.email %></h5>
+
+  </a>
+  </div>
+
+
